@@ -1,20 +1,8 @@
-<template>
-    <div class="intro-landing">
-        <h1>Aprende a cultivar tu comida</h1>
-        <h2>Descubre todos los beneficios que te pueden dar las plantas. Desde comida sana a remedios naturales.</h2>
-        <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
-       <div ref="sceneContainer" class="scene-container"></div>
-    </div>
-    <div>
-        <h1>Tomate</h1>
-        <p>El tomate es una planta herbácea de la familia de las solanáceas, originaria de América Central y del Sur. Es un cultivo muy importante en la agricultura mundial y se utiliza ampliamente en la cocina.</p>
-        <img :src="tomates.img" alt="Tomate" class="plant-image" />
-        <p>El tomate es rico en vitaminas y antioxidantes, y se consume fresco, en salsas, sopas y otros platos. Además, su cultivo es fundamental para la economía de muchos países.</p>
-      </div>
-</template>
+
 
 <script setup>
-    import plantas from '@/data.js';
+import plantas from '@/data.js';
+ import Card from '@/components/Card.vue';
     const tomates = plantas[0]
     console.log(tomates)
 
@@ -54,8 +42,8 @@ function init3DScene() {
   sceneContainer.value.appendChild(renderer.domElement);
 
   // Iluminación
-  scene.add(new THREE.AmbientLight(0xffffff, 0.8));
-  const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+  scene.add(new THREE.AmbientLight(0xffffff,1.2));
+  const dirLight = new THREE.DirectionalLight(0xffffff, 4);
   dirLight.position.set(5, 10, 7.5);
   scene.add(dirLight);
 
@@ -67,17 +55,24 @@ function init3DScene() {
 
   const loader = new GLTFLoader();
 
+  
+
   // Planta rotatoria
   loader.load('/models/leave3D.glb', (gltf) => {
     const model = gltf.scene;
-    model.scale.set(3, 3, 3);
+    model.scale.set(5, 5, 5);
+      // Centrar el modelo en su propio eje
     const box = new THREE.Box3().setFromObject(model);
     const center = box.getCenter(new THREE.Vector3());
     model.position.sub(center);
-      model.position.x -= 2; // ajusta el valor según sea necesario
-    rotatingGroup.add(model);
+      // Crear un pivot que contiene el modelo para posicionarlo izq
+      const pivot = new THREE.Object3D();
+    pivot.add(model); // el modelo ahora gira sobre su eje
+    pivot.position.set(-2, -0.5, 0); // mover el grupo hacia la izquierda
+
+    rotatingGroup.add(pivot);
   });
-  loader.load('/models/lime_01.glb', (gltf) => {
+  loader.load('/models/lime2.glb', (gltf) => {
     const model = gltf.scene;
     model.scale.set(3, 3, 3);
     const box = new THREE.Box3().setFromObject(model);
@@ -96,6 +91,15 @@ function init3DScene() {
     model.position.y = 0;
     floatingGroup.add(model);
   });
+  // loader.load('/models/tomate3D.glb', (gltf) => {
+  //   const model = gltf.scene;
+  //   model.scale.set(0.5,0.5, 0.5);
+  //   const box = new THREE.Box3().setFromObject(model);
+  //   const center = box.getCenter(new THREE.Vector3());
+
+  //   model.position.y = 0;
+  //   floatingGroup.add(model);
+  // });
 
   animate();
 }
@@ -105,11 +109,13 @@ function animate() {
   const elapsed = clock.getElapsedTime();
 
   // Planta: rotación horizontal con inercia
-  rotatingGroup.rotation.y = THREE.MathUtils.lerp(
-    rotatingGroup.rotation.y,
+ rotatingGroup.children.forEach((pivot) => {
+  pivot.rotation.y = THREE.MathUtils.lerp(
+    pivot.rotation.y,
     plantTargetY,
     0.1
   );
+});
 
   // Frutas: flotan + rotan libremente en 3 ejes
   floatingGroup.children.forEach((fruit, i) => {
@@ -165,29 +171,71 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', onWindowResize);
 });
 </script>
-
+<template>
+    <section class="intro-landing">
+      <div class="intro-text">
+            <h1>Descubre el poder de las plantas</h1>        
+            <h2>Siéntete mejor cultivando comida sana y remedios naturales.</h2>
+            <h3></h3> 
+            <button class="btn-primary">Comienza a plantar</button> 
+        </div>
+        
+        <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
+       <div ref="sceneContainer" class="scene-container"></div>
+    </section>
+    <div class="recomendaciones">
+      <!-- <Card v-for="(plant, index) in plants" :key="index" :plant="plant" /> -->
+        <!-- <h1>Tomate</h1>
+        <p>El tomate es una planta herbácea de la familia de las solanáceas, originaria de América Central y del Sur. Es un cultivo muy importante en la agricultura mundial y se utiliza ampliamente en la cocina.</p>
+        <img :src="tomates.img" alt="Tomate" class="plant-image" />
+        <p>El tomate es rico en vitaminas y antioxidantes, y se consume fresco, en salsas, sopas y otros platos. Además, su cultivo es fundamental para la economía de muchos países.</p> -->
+      </div>
+</template>
 <style scoped >
-.intro-landing{
-   height: 100%;
-   text-shadow: 0 0px 6px  white;
-   font-weight: bold;
-   padding:0 48px;
-}
+
 .scene-container {
   position:absolute;
   top:0;
   left:0;
   z-index:-1;
   width: 100%;
-  height: 800px; /* Ocupa toda la altura de la ventana */
+  
   margin: 0;
   padding: 0;
   overflow: hidden; /* Asegúrate de que no haya scroll */
 }
+.intro-landing{
+   height: 100%;
+   text-shadow: 0 0px 6px  white;
+   font-weight: bold;
+   padding: 0 clamp(0px, 6vw ,48px);
+   justify-items: end;
+   max-height: 100vh;
+   align-content: center;
+  
+}
+.intro-text{
+
+   max-width: 600px;
+   color: #2a6a15;  
+   justify-items: center;   
+}
+h1{
+  margin: 0;
+
+}
 h2{
-  color: #333;
-  font-size: 1.2em;
-  text-align: left;
+ 
+  font-size: 1.2em;  
   margin-top: 20px;
+}
+.btn-primary{
+  background-color: #2a6a15;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
 }
 </style>

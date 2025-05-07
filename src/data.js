@@ -23,6 +23,10 @@ export class Plant {
     this.beneficios = beneficios;
     this.comoPlantar = comoPlantar;
   }
+
+  getRecomendations() {
+    return `Para cuidar ${this.nombre}, asegúrate de ${this.riego} y proporcionarle ${this.luz}. Puedes usarla ${this.uso}. Beneficios: ${this.beneficios}. Cómo plantar: ${this.comoPlantar}`;
+  }
 }
  const plantas = [
    new Plant(
@@ -65,7 +69,7 @@ export class Plant {
      4,
      "Romero",
      "Aromática muy resistente que mejora la memoria, la circulación y es excelente en guisos.",
-     ["Comestible", "Medicinal"],
+     ["Comestible", "Medicinal", "Facil"],
      "https://cdn.pixabay.com/photo/2016/04/01/09/14/rosemary-1295441_960_720.jpg",
      "Riego escaso. Tolera la sequía.",
      "Sol directo.",
@@ -77,7 +81,7 @@ export class Plant {
      5,
      "Lavanda",
      "Flor aromática usada en relajación, infusiones, y como repelente natural.",
-     ["Medicinal", "Antimosquitos"],
+     ["Medicinal", "Antimosquitos", "Facil"],
      "https://cdn.pixabay.com/photo/2017/07/08/06/54/lavender-2483018_960_720.jpg",
      "Riego moderado. Dejar secar el suelo entre riegos.",
      "Sol directo.",
@@ -89,7 +93,7 @@ export class Plant {
      6,
      "Aloe Vera",
      "Planta suculenta con gran valor medicinal para piel, quemaduras y digestión.",
-     ["Medicinal"],
+     ["Medicinal", "Facil"],
      "https://cdn.pixabay.com/photo/2015/03/30/12/35/aloe-699818_960_720.jpg",
      "Riego muy escaso. Dejar secar completamente entre riegos.",
      "Luz abundante, incluso sol directo.",
@@ -197,7 +201,7 @@ export class Plant {
      15,
      "Salvia",
      "Aromática con propiedades antiinflamatorias y culinarias.",
-     ["Comestible", "Medicinal"],
+     ["Comestible", "Medicinal", "Facil"],
      "https://cdn.pixabay.com/photo/2020/07/10/08/56/sage-5389769_960_720.jpg",
      "Riego moderado. Dejar secar entre riegos.",
      "Sol directo.",
@@ -314,6 +318,158 @@ export class Plant {
      "Cicatrizante, útil para piel inflamada o acné.",
      "Perenne. Requiere poca agua y poda ligera tras floración."
    ),
-   new Plant(25),
+   new Plant(
+     29,
+     "Pimiento",
+     "Verdura popular en múltiples platos, desde guisos hasta ensaladas.",
+     ["Comestible", "Huerto urbano"],
+     "https://cdn.pixabay.com/photo/2016/08/03/01/07/bell-pepper-1568009_960_720.jpg",
+     "Riego moderado, constante y sin encharcar.",
+     "Sol directo. Necesita calor.",
+     "Asado, crudo en ensaladas, relleno o en sofritos.",
+     "Fuente de vitamina C y antioxidantes.",
+     "Sembrar en primavera en tierra rica y bien drenada. Requiere temperaturas cálidas (mínimo 20 °C). Germina en 7-15 días y se trasplanta cuando tenga 4-6 hojas. Poda ligera para estimular el crecimiento de frutos."
+   ),
+
+   new Plant(
+     30,
+     "Cebolla",
+     "Base de muchos platos. Se puede cultivar incluso en macetas profundas.",
+     ["Comestible", "Huerto clásico"],
+     "https://cdn.pixabay.com/photo/2016/03/05/19/02/onions-1238332_960_720.jpg",
+     "Riego ligero al inicio, luego espaciado.",
+     "Sol directo. Le gusta el clima templado.",
+     "Cruda en ensaladas, caramelizada, en guisos, caldos y sofritos.",
+     "Rica en quercetina y compuestos antioxidantes.",
+     "Plantar en surcos separados unos 15 cm. No enterrar demasiado el bulbo. Cosechar cuando las hojas se doblen y amarilleen. Secar bien antes de almacenar. Evitar riego excesivo en la fase final para evitar podredumbre."
+   ),
+
+   new Plant(
+     31,
+     "Tomate",
+     "Una de las hortalizas más cultivadas. Versátil y sabrosa.",
+     ["Comestible", "Huerto popular"],
+     "https://cdn.pixabay.com/photo/2016/04/01/10/12/tomatoes-1293884_960_720.jpg",
+     "Riego constante, mejor por goteo. Evitar mojar las hojas.",
+     "Sol directo. Necesita al menos 6 h de sol diario.",
+     "En ensaladas, salsas, zumos o asados.",
+     "Rico en licopeno, antioxidantes y vitaminas A y C.",
+     "Sembrar en semillero a fines del invierno y trasplantar cuando mida unos 15 cm. Necesita tutores o soporte vertical. Poda de chupones (brotes entre tallo y rama) para concentrar la energía en los frutos. Cosechar cuando estén bien rojos y firmes."
+   ),
+
+   new Plant(
+     32,
+     "Zanahoria",
+     "Raíz comestible dulce y crujiente. Muy fácil de cultivar.",
+     ["Comestible", "Huerto urbano"],
+     "https://cdn.pixabay.com/photo/2018/08/08/10/44/carrots-3590733_960_720.jpg",
+     "Riego regular y moderado. No encharcar.",
+     "Sol directo o semisombra.",
+     "En crudo, cocida, en purés o postres.",
+     "Rica en betacarotenos, mejora la visión y el sistema inmune.",
+     "Tierra suelta, profunda y sin piedras para que la raíz crezca recta. Siembra directa, no trasplante. Mantener húmedo hasta la germinación (7-21 días). Aclareo para dejar espacio entre plantas. Cosechar entre 70 y 100 días."
+   ),
+   new Plant(
+     33,
+     "Rúcula",
+     "Hortaliza de hoja con sabor ligeramente picante. Crece rápido y en poco espacio.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2017/06/08/10/42/arugula-2385626_960_720.jpg",
+     "Riego regular, mantener humedad sin encharcar.",
+     "Semisombra o sol suave.",
+     "En ensaladas, pizzas, bocadillos o pesto.",
+     "Rica en vitamina K, C y compuestos antiinflamatorios.",
+     "Ideal para maceta ancha pero poco profunda. Sembrar directamente, germina en pocos días. Puedes cortar hojas jóvenes y seguir cosechando varias semanas. Evita calor extremo que acelera la floración."
+   ),
+
+   new Plant(
+     34,
+     "Espinaca",
+     "Verdura de hoja muy nutritiva. Perfecta para cultivo en espacios reducidos.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2017/04/17/10/32/spinach-2238779_960_720.jpg",
+     "Riego moderado, suelo siempre ligeramente húmedo.",
+     "Semisombra o sol parcial.",
+     "Salteada, en ensaladas o batidos verdes.",
+     "Alto contenido en hierro, ácido fólico y antioxidantes.",
+     "Siembra directa en maceta profunda (mínimo 20 cm). Resiste bien el frío. Cosecha hojas exteriores cuando tengan buen tamaño. Crece rápido y se adapta bien a espacios pequeños si se mantiene húmeda y ventilada."
+   ),
+
+   new Plant(
+     35,
+     "Lechuga",
+     "Clásica verdura de hoja fácil de cultivar incluso en jardineras.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2016/06/18/17/42/lettuce-1460606_960_720.jpg",
+     "Riego frecuente pero sin encharcar. Evitar sequías.",
+     "Sol suave o semisombra.",
+     "En ensaladas o como base para wraps y bocadillos.",
+     "Rica en agua y fibra, ligera y digestiva.",
+     "Ideal en jardineras de 20 cm de profundidad. Siembra directa o trasplante. Puedes recolectar hojas exteriores poco a poco o cortar la planta entera. Mantén el sustrato húmedo y evita el calor excesivo que causa floración prematura."
+   ),
+
+   new Plant(
+     36,
+     "Rábano",
+     "Raíz pequeña, de cultivo rápido y perfecta para principiantes.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2016/05/04/20/08/radish-1374782_960_720.jpg",
+     "Riego constante, suelo húmedo pero no encharcado.",
+     "Sol directo o semisombra.",
+     "Crudo en ensaladas, encurtido o como snack.",
+     "Bajo en calorías, rico en vitamina C y potasio.",
+     "Se adapta bien a macetas de al menos 15 cm de profundidad. Siembra directa cada pocas semanas para cosecha continua. Germina en 3-7 días y se cosecha en 25-40 días. Ideal para cultivar junto a otras verduras de ciclo más largo."
+   ),
+
+   new Plant(
+     38,
+     "Tomate cherry",
+     "Variedad compacta de tomate ideal para balcones, muy productiva en maceta.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2018/06/03/16/51/tomato-3456854_960_720.jpg",
+     "Riego abundante y regular. No mojar hojas.",
+     "Sol directo mínimo 6h/día.",
+     "Crudos en ensaladas, brochetas o salsas frescas.",
+     "Fuente de licopeno, antioxidante beneficioso para el corazón.",
+     "Maceta profunda (30 cm mínimo). Usa tutor o jaula para sostenerlo. Polinización manual en balcones ayuda a la producción. Requiere abono cada 15 días y buena exposición solar."
+   ),
+
+   new Plant(
+     39,
+     "Pimiento italiano",
+     "Planta compacta y productiva. Muy usada en cocina mediterránea.",
+     ["Comestible", "Maceta", "Balcón"],
+     "https://cdn.pixabay.com/photo/2014/04/10/11/06/chili-320278_960_720.jpg",
+     "Riego regular, sin encharcar. Más riego en floración.",
+     "Sol directo.",
+     "A la plancha, en guisos, rellenos o crudos.",
+     "Rico en vitamina C y antioxidantes.",
+     "Maceta profunda y amplia. Necesita calor y sol. Usa tutor. Retira las primeras flores para estimular producción. Asegura buen drenaje y riega solo cuando la tierra esté seca en superficie."
+   ),
+
+   new Plant(
+     41,
+     "Perejil",
+     "Aromática resistente, ideal para jardineras y pequeños espacios.",
+     ["Comestible", "Aromática", "Balcón"],
+     "https://cdn.pixabay.com/photo/2014/04/10/11/06/parsley-320278_960_720.jpg",
+     "Riego frecuente y uniforme.",
+     "Semisombra o sol parcial.",
+     "Como condimento en casi cualquier plato.",
+     "Fuente de hierro y vitamina C.",
+     "Maceta de al menos 20 cm de profundidad. Siembra directa o trasplante. Cosecha hojas exteriores cuando estén bien formadas. Crece lentamente al principio pero se mantiene varios meses si se cuida."
+   ),
+   new Plant(
+     42,
+     "Pimiento de Padrón",
+     "Variedad gallega de pequeño tamaño, famosa por su sabor suave o picante sorpresa.",
+     ["Comestible", "Huerto urbano", "Balcón"],
+     "https://cdn.pixabay.com/photo/2015/07/02/10/07/pimientos-828888_960_720.jpg",
+     "Riego moderado. Más frecuente en floración y fruto.",
+     "Sol directo mínimo 6h/día.",
+     "Fritos en sartén con sal gruesa. También en tortillas o acompañamientos.",
+     "Fuente de antioxidantes y vitaminas A y C. Ayuda a la digestión.",
+     "Maceta de al menos 30 cm de profundidad. Prefiere climas cálidos. Necesita tutor si crece mucho. Cosechar verdes y pequeños (5-8 cm). Usar abono orgánico o compost cada 2 semanas. Importante buen drenaje y exposición solar constante."
+   ),
  ];
 export default plantas;

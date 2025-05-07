@@ -13,15 +13,15 @@
     .nav {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
-        width: 100vw;       
-        padding: 10px;
+        width: 100%;       
+        padding: 16px 48px;
     }
     nav *{
        
-        color: #069f10;
-        font-size: 1.2em;
+        color: #204722;
+        font-size: 1em;
        
     }
 </style>
