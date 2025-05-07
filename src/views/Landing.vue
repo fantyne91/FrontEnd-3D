@@ -1,10 +1,11 @@
 
 
 <script setup>
-import plantas from '@/data.js';
- import Card from '@/components/Card.vue';
-    const tomates = plantas[0]
-    console.log(tomates)
+import {plantas, Plant} from '@/data.js';
+import Card from '@/components/Card.vue';
+
+const plantaRecomendada = Plant.getRecomendations(plantas)
+   
 
 
 //3D Scene
@@ -91,23 +92,21 @@ function init3DScene() {
     model.position.y = 0;
     floatingGroup.add(model);
   });
-  // loader.load('/models/tomate3D.glb', (gltf) => {
-  //   const model = gltf.scene;
-  //   model.scale.set(0.5,0.5, 0.5);
-  //   const box = new THREE.Box3().setFromObject(model);
-  //   const center = box.getCenter(new THREE.Vector3());
 
-  //   model.position.y = 0;
-  //   floatingGroup.add(model);
-  // });
 
   animate();
 }
+//animacion y stop
+let animationFrameId;
+let isVisible = true;
 
 function animate() {
-  requestAnimationFrame(animate);
-  const elapsed = clock.getElapsedTime();
 
+  if (!isVisible) return; // Detener la animación si no es visible
+
+  animationFrameId = requestAnimationFrame(animate);
+  const elapsed = clock.getElapsedTime();
+  // console.log('Animando...');
   // Planta: rotación horizontal con inercia
  rotatingGroup.children.forEach((pivot) => {
   pivot.rotation.y = THREE.MathUtils.lerp(
@@ -141,8 +140,19 @@ function animate() {
 
   renderer.render(scene, camera);
 }
+// Detectar si el elemento está visible en la ventana
+const observer = new IntersectionObserver(([entry]) => {
+  isVisible = entry.isIntersecting;
 
+  if (isVisible) {
+    animate();
+  } else {
+    cancelAnimationFrame(animationFrameId);
+    console.log('Animación detenida');
+  }
+});
 
+ 
 function onWheel(event) {
   // Planta: scroll vertical → rotación Y
   plantTargetY += event.deltaY * 0.005;
@@ -164,6 +174,9 @@ onMounted(() => {
   init3DScene();
   window.addEventListener('wheel', onWheel);
   window.addEventListener('resize', onWindowResize);
+   const offContainer = document.querySelector('.scene-container');
+  observer.observe(offContainer);
+
 });
 
 onBeforeUnmount(() => {
@@ -174,7 +187,7 @@ onBeforeUnmount(() => {
 <template>
     <section class="intro-landing">
       <div class="intro-text">
-            <h1>Descubre el poder de las plantas</h1>        
+            <h1>Descubre el poder de las plantas y sus beneficios</h1>        
             <h2>Siéntete mejor cultivando comida sana y remedios naturales.</h2>
             <h3></h3> 
             <button class="btn-primary">Comienza a plantar</button> 
@@ -183,23 +196,23 @@ onBeforeUnmount(() => {
         <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
        <div ref="sceneContainer" class="scene-container"></div>
     </section>
-    <div class="recomendaciones">
-      <!-- <Card v-for="(plant, index) in plants" :key="index" :plant="plant" /> -->
-        <!-- <h1>Tomate</h1>
-        <p>El tomate es una planta herbácea de la familia de las solanáceas, originaria de América Central y del Sur. Es un cultivo muy importante en la agricultura mundial y se utiliza ampliamente en la cocina.</p>
-        <img :src="tomates.img" alt="Tomate" class="plant-image" />
-        <p>El tomate es rico en vitaminas y antioxidantes, y se consume fresco, en salsas, sopas y otros platos. Además, su cultivo es fundamental para la economía de muchos países.</p> -->
+    <section class= "recomendadas">
+      <h3>Plantas de fácil cuidado</h3>
+      <div class= "card-container">
+          <Card  v-for="(planta, index) in plantaRecomendada" :key="index" :planta="planta" /> 
       </div>
+    </section>
+    
 </template>
 <style scoped >
-
+ /* scene */
 .scene-container {
   position:absolute;
   top:0;
   left:0;
   z-index:-1;
   width: 100%;
-  
+  border-bottom: 16px solid #1b460d;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Asegúrate de que no haya scroll */
@@ -208,26 +221,16 @@ onBeforeUnmount(() => {
    height: 100%;
    text-shadow: 0 0px 6px  white;
    font-weight: bold;
-   padding: 0 clamp(0px, 6vw ,48px);
+   
    justify-items: end;
    max-height: 100vh;
-   align-content: center;
-  
+   align-content: center;  
 }
 .intro-text{
 
-   max-width: 600px;
+   max-width: 700px;
    color: #2a6a15;  
    justify-items: center;   
-}
-h1{
-  margin: 0;
-
-}
-h2{
- 
-  font-size: 1.2em;  
-  margin-top: 20px;
 }
 .btn-primary{
   background-color: #2a6a15;
@@ -238,4 +241,18 @@ h2{
   cursor: pointer;
   border-radius: 5px;
 }
+h2{ 
+  font-size: 1.2em;  
+  margin-top: 20px;
+}
+/* seccion recomendadas */
+h3{
+  font-size: 1.8em;  
+  color: #1b460d; 
+}
+.recomendadas{
+  justify-items: start; 
+ 
+}
+
 </style>
