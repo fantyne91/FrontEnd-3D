@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Landing from "@/views/Landing.vue";
 import Planta from "@/views/Planta.vue";
 import Huerto from "@/views/Huerto.vue";
+import Medicinal from "@/views/Medicinal.vue";
+import Antiplagas from "@/views/Antiplagas.vue";
 const routes = [
   {
     path: "/",
@@ -19,7 +21,16 @@ const routes = [
     name: "Huerto",
     component: Huerto,
   },
-  // Puedes añadir más rutas aquí
+  {
+    path: "/Medicinal",
+    name: "Medicinal",
+    component: Medicinal,
+  },
+  {
+    path: "/Antiplagas",
+    name: "Antiplagas",
+    component: Antiplagas,
+  },
 ];
 
 const router = createRouter({

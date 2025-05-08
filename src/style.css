@@ -4,7 +4,7 @@
   font-weight: 400;
  
   color-scheme: light dark;
-  color: rgba(28, 28, 28, 0.87);
+  color: #1e4f0e;
   background-color: #ededed;
 
   font-synthesis: none;
@@ -20,9 +20,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
-  color: #74dd50;
-}
+
 #app {
  
   margin: 0 auto;
@@ -37,15 +35,22 @@ body {
   min-height: 100vh;
 }
 section{
-  padding: 0 clamp(16px, 8vw , 120px);
+  padding: 24px clamp(16px, 8vw , 120px);
+ 
 }
-h1,h2,h3,h4,h5,h6 {
+.section-column{
+  display: flex;
+  flex-direction: column;
+  gap:32px;
+}
+h1,h2,h3,h4,h5,h6, p{
   
   margin: 0;
 }
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
+  color: #2a6a15;
 }
 /* Buttons */
 .btn-primary{
@@ -80,14 +85,8 @@ button:focus-visible {
   color: #215310; 
 }
 
-.card {
-  padding: 2em;
-}
-/* Img */
-.planta-image{
-  max-width: 600px;
-  border-radius: 32px;
-}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

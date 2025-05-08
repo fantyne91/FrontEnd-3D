@@ -199,7 +199,7 @@ onBeforeUnmount(() => {
     <section class= "recomendadas">
       <h3>Plantas de fácil cuidado</h3>
       <div class= "card-container">
-          <Card  v-for="(planta, index) in plantaRecomendada" :key="index" :planta="planta" /> 
+          <Card  v-for="(planta, index) in plantaRecomendada" :key="index" :planta="planta" :recomendada="true" /> 
       </div>
     </section>
     
@@ -238,11 +238,12 @@ onBeforeUnmount(() => {
 h2{ 
   font-size: 1.4em;  
   margin-top: 20px;
+  
 }
 /* seccion recomendadas */
 h3{
   font-size: 2em;  
- 
+ color: #215310;
 }
 .recomendadas{
   justify-items: start; 

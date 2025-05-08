@@ -31,6 +31,9 @@ export class Plant {
   static getHuerto(plantas) {
     return plantas.filter((plant) => plant.categoria.includes("Comestible"));
   }
+  static getMedicinal(plantas) {
+    return plantas.filter((plant) => plant.categoria.includes("Medicinal"));
+  }
 }
  export const plantas = [
    new Plant(
@@ -38,7 +41,7 @@ export class Plant {
      "Tomate",
      "Fruto comestible muy popular y versátil en la cocina, rico en licopeno y antioxidantes.",
      ["Comestible", "Medicinal"],
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvw7SVlbhkUYpRVK_f4LZFxVwAdT4hZ4YhMw&s",
+     "https://upload.wikimedia.org/wikipedia/commons/3/31/La_palma-rancho_tomate_cherry.JPG",
      "Riego regular, manteniendo el sustrato húmedo sin encharcar. Evitar mojar las hojas.",
      "Sol directo (mínimo 6 horas diarias).",
      "Crudo en ensaladas, cocinado en salsas, guisos o como base de conservas.",
@@ -56,7 +59,7 @@ export class Plant {
      "Menta",
      "Planta aromática con propiedades digestivas y refrescantes, ideal para infusiones y repelente natural.",
      ["Comestible", "Antimosquitos", "Medicinal"],
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJNv3zoihZom2jLKJ6JCnMv2HM6qG41dhVkA&s",
+     "https://live.staticflickr.com/3336/3425984237_5def8118cb_b.jpg",
      "Riego frecuente, especialmente en épocas calurosas. Evitar que el sustrato se seque.",
      "Sombra parcial o luz indirecta.",
      "Infusión digestiva, hojas frescas en ensaladas o mojitos.",
@@ -74,7 +77,7 @@ export class Plant {
      "Albahaca",
      "Hierba aromática esencial en la cocina mediterránea, también actúa como repelente natural.",
      ["Comestible", "Antimosquitos"],
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbsQrhOqn9pluPyRev1EqaPaKSFXBdi6cUlA&s",
+     "https://images.pexels.com/photos/7452769/pexels-photo-7452769.jpeg",
      "Riego regular, evitando encharcamientos.",
      "Sol directo o semisombra.",
      "Ideal para pesto, ensaladas, pizzas o infusiones relajantes.",
@@ -146,7 +149,7 @@ export class Plant {
      "Hierbabuena",
      "Planta muy similar a la menta, con aroma intenso, útil en cocina y salud digestiva.",
      ["Comestible", "Medicinal"],
-     "https://live.staticflickr.com/3805/13924128123_34181c213a_b.jpg",
+     "https://upload.wikimedia.org/wikipedia/commons/7/71/Hierbabuena.34.jpg",
      "Riego frecuente, mantener el sustrato húmedo.",
      "Luz indirecta o sombra parcial.",
      "Usos culinarios similares a la menta, también en infusiones.",
@@ -218,7 +221,7 @@ export class Plant {
      "Espinaca",
      "Hortaliza de hoja verde rica en hierro, ideal para ensaladas y batidos.",
      ["Comestible", "Medicinal"],
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPcfq6d_u_A71z2bVic7qsAtv6r83lJoxxrw&s",
+     "https://live.staticflickr.com/7144/6420373241_5fc64f055b_b.jpg",
      "Riego regular, mantener el sustrato húmedo.",
      "Sombra parcial o sol directo.",
      "En ensaladas, cocida o en batidos verdes.",
@@ -236,15 +239,15 @@ export class Plant {
      "Ajo",
      "Bulbo con fuerte aroma y potentes beneficios antibacterianos y cardiovasculares.",
      ["Comestible", "Medicinal"],
-     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_UAHFJfwepLdRkLQt9GNI9w2GkZtGQZYvmw&s",
+     "https://images.pexels.com/photos/15820106/pexels-photo-15820106/free-photo-of-vegetales-verduras-fresco-puerro.jpeg",
      "Riego moderado hasta que el tallo empiece a secar.",
      "Sol directo.",
      "Cocinado en casi cualquier receta o crudo con aceite.",
      "Antibiótico natural, reduce colesterol, fortalece sistema inmune.",
-     "Plantar en otoño. Requiere 6-8 meses hasta cosecha.",
+     
      [
-       "Temporada: Otoño a primavera.",
-       "Tiempo hasta recolección: 1-2 meses.",
+       "Temporada: Planta en otoño a cosecha en primavera.",
+       "Tiempo hasta recolección: 6 meses.",
        "Suelo/Maceta: Suelo rico en nutrientes.",
        "Regado: Riego regular.",
        "Consejos adicionales: Requiere temperaturas frescas.",
@@ -260,7 +263,7 @@ export class Plant {
      "Luz solar directa o parcial.",
      "En tortilla, crema agria, pan o sopas.",
      "Fuente de vitamina A y C, digestivo.",
-     "Crece rápido. Se puede cortar varias veces al año.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -279,7 +282,7 @@ export class Plant {
      "Sol directo o semisombra.",
      "En infusiones o macerada como repelente.",
      "Ahuyenta mosquitos eficazmente, reduce ansiedad.",
-     "Plantar en clima cálido. Requiere espacio y sol.",
+  
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 2-3 meses.",
@@ -298,7 +301,7 @@ export class Plant {
      "Sol directo.",
      "En infusiones, guisos y platos de carne.",
      "Reduce inflamaciones, regula la menstruación, antioxidante, beneficiosa para piel y cabello",
-     "Plantar en primavera. Poda regular. Tolera sequía.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 meses.",
@@ -317,7 +320,7 @@ export class Plant {
      "Sombra parcial o luz indirecta.",
      "En infusiones para calmar ansiedad o problemas de sueño.",
      "Relajante natural, alivia estrés y trastornos digestivos.",
-     "Plantar en primavera. Crece bien en maceta. Poda regular para estimular crecimiento.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -336,7 +339,7 @@ export class Plant {
      "Sombra parcial.",
      "Cocinada como espinacas, en sopas o infusiones.",
      "Depurativa, rica en hierro, buena para el cabello y la piel.",
-     "Recolectar con guantes. Brotes tiernos en primavera son comestibles.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -355,7 +358,7 @@ export class Plant {
      "Sol directo.",
      "Infusión calmante para estrés y dolores estomacales.",
      "Antiinflamatoria, calmante, alivia cólicos.",
-     "Siembra en primavera. Requiere sol y buena ventilación.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -374,7 +377,7 @@ export class Plant {
      "Semisombra.",
      "En cápsulas o infusión de la raíz seca.",
      "Sedante natural, combate insomnio y ansiedad.",
-     "Plantar en otoño o primavera. Recolectar raíz tras 2 años.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -393,7 +396,7 @@ export class Plant {
      "Sol directo.",
      "En pescados, encurtidos y salsas.",
      "Digestivo, alivia flatulencias y cólicos.",
-     "Siembra directa. No trasplantar. Ciclo rápido.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -413,7 +416,7 @@ export class Plant {
      "Sol directo.",
      "Infusión para regular el ciclo menstrual.",
      "Antiinflamatoria, cicatrizante, reguladora hormonal.",
-     "Plantar en primavera. Muy resistente. Atrae polinizadores.",
+    
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -427,12 +430,12 @@ export class Plant {
      "Hisopo",
      "Aromática tradicional usada en infusiones y para aliviar problemas respiratorios.",
      ["Medicinal"],
-     "https://cdn.pixabay.com/photo/2016/09/06/23/00/hyssop-1649531_960_720.jpg",
+     "https://live.staticflickr.com/136/325840597_5fb6710619_c.jpg",
      "Riego moderado. No encharcar.",
      "Sol directo.",
      "Infusión expectorante o como tónico.",
      "Expectorante, antiséptico y digestivo.",
-     "Plantar en primavera. Atrayente de abejas.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1 año.",
@@ -446,12 +449,12 @@ export class Plant {
      "Hinojo",
      "Aromática con sabor anisado, usada en cocina y digestiva.",
      ["Comestible", "Medicinal"],
-     "https://cdn.pixabay.com/photo/2020/06/08/06/35/fennel-5273536_960_720.jpg",
+     "https://live.staticflickr.com/3286/2600413158_e67cbfe078_b.jpg",
      "Riego moderado y constante.",
      "Sol directo.",
      "Tallos y semillas en guisos, ensaladas e infusiones.",
      "Digestivo, calma gases y estimula el apetito.",
-     "Siembra directa. Requiere espacio y sol.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2 años.",
@@ -465,12 +468,12 @@ export class Plant {
      "Milenrama rosa",
      "Variante ornamental de la milenrama, útil en infusiones y para la piel.",
      ["Medicinal", "Decorativa", "Facil"],
-     "https://cdn.pixabay.com/photo/2017/07/08/18/18/yarrow-2484642_960_720.jpg",
+     "https://upload.wikimedia.org/wikipedia/commons/d/db/Milenrama_en_rosa_-_Achillea_millefolium_%2814666018670%29.jpg",
      "Riego ligero. Tolera sequía.",
      "Sol directo.",
      "Infusión calmante o en cremas caseras.",
      "Cicatrizante, útil para piel inflamada o acné.",
-     "Perenne. Requiere poca agua y poda ligera tras floración.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -484,12 +487,12 @@ export class Plant {
      "Pimiento",
      "Verdura popular en múltiples platos, desde guisos hasta ensaladas.",
      ["Comestible"],
-     "https://cdn.pixabay.com/photo/2016/08/03/01/07/bell-pepper-1568009_960_720.jpg",
+     "https://upload.wikimedia.org/wikipedia/commons/5/59/Pimiento_morr%C3%B3n_%28Capsicum_annuum%29.jpg",
      "Riego moderado, constante y sin encharcar.",
      "Sol directo. Necesita calor.",
      "Asado, crudo en ensaladas, relleno o en sofritos.",
      "Fuente de vitamina C y antioxidantes.",
-     "Sembrar en primavera en tierra rica y bien drenada. Requiere temperaturas cálidas (mínimo 20 °C). Germina en 7-15 días y se trasplanta cuando tenga 4-6 hojas. Poda ligera para estimular el crecimiento de frutos.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 70-90 días.",
@@ -503,12 +506,12 @@ export class Plant {
      "Cebolla",
      "Base de muchos platos. Se puede cultivar incluso en macetas profundas.",
      ["Comestible"],
-     "https://cdn.pixabay.com/photo/2016/03/05/19/02/onions-1238332_960_720.jpg",
+     "https://live.staticflickr.com/7394/12310912623_67a2bd8aef_b.jpg",
      "Riego ligero al inicio, luego espaciado.",
      "Sol directo. Le gusta el clima templado.",
      "Cruda en ensaladas, caramelizada, en guisos, caldos y sofritos.",
      "Rica en quercetina y compuestos antioxidantes.",
-     "Plantar en surcos separados unos 15 cm. No enterrar demasiado el bulbo. Cosechar cuando las hojas se doblen y amarilleen. Secar bien antes de almacenar. Evitar riego excesivo en la fase final para evitar podredumbre.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 3-4 meses.",
@@ -522,17 +525,17 @@ export class Plant {
      "Zanahoria",
      "Raíz comestible dulce y crujiente. Muy fácil de cultivar.",
      ["Comestible", "Huerto urbano"],
-     "https://cdn.pixabay.com/photo/2018/08/08/10/44/carrots-3590733_960_720.jpg",
+     "https://images.pexels.com/photos/1306559/pexels-photo-1306559.jpeg",
      "Riego regular y moderado. No encharcar.",
      "Sol directo o semisombra.",
      "En crudo, cocida, en purés o postres.",
      "Rica en betacarotenos, mejora la visión y el sistema inmune.",
-     "Tierra suelta, profunda y sin piedras para que la raíz crezca recta. Siembra directa, no trasplante. Mantener húmedo hasta la germinación (7-21 días). Aclareo para dejar espacio entre plantas. Cosechar entre 70 y 100 días.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 meses.",
        "Suelo/Maceta: Suelo suelto y profundo.",
-       "Regado: Riego regular.",
+       "Regado: Riego regular, en germinación siempre húmedo.",
        "Consejos adicionales: Mantener el suelo libre de piedras.",
      ]
    ),
@@ -541,16 +544,16 @@ export class Plant {
      "Rúcula",
      "Hortaliza de hoja con sabor ligeramente picante. Crece rápido y en poco espacio.",
      ["Comestible", "Maceta", "Balcon"],
-     "https://cdn.pixabay.com/photo/2017/06/08/10/42/arugula-2385626_960_720.jpg",
+     "https://upload.wikimedia.org/wikipedia/commons/9/90/RuculaDSC7702.jpg",
      "Riego regular, mantener humedad sin encharcar.",
      "Semisombra o sol suave.",
      "En ensaladas, pizzas, bocadillos o pesto.",
      "Rica en vitamina K, C y compuestos antiinflamatorios.",
-     "Ideal para maceta ancha pero poco profunda. Sembrar directamente, germina en pocos días. Puedes cortar hojas jóvenes y seguir cosechando varias semanas. Evita calor extremo que acelera la floración.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 4-6 semanas.",
-       "Suelo/Maceta: Suelo bien drenado.",
+       "Suelo/Maceta: Suelo bien drenado o maceta ancha.",
        "Regado: Riego regular.",
        "Consejos adicionales: Cosecha las hojas cuando estén tiernas.",
      ]
@@ -560,17 +563,17 @@ export class Plant {
      "Espinaca",
      "Verdura de hoja muy nutritiva. Perfecta para cultivo en espacios reducidos.",
      ["Comestible", "Maceta", "Balcon"],
-     "https://cdn.pixabay.com/photo/2017/04/17/10/32/spinach-2238779_960_720.jpg",
+     "https://live.staticflickr.com/7144/6420373241_5fc64f055b_b.jpg",
      "Riego moderado, suelo siempre ligeramente húmedo.",
      "Semisombra o sol parcial.",
      "Salteada, en ensaladas o batidos verdes.",
      "Alto contenido en hierro, ácido fólico y antioxidantes.",
-     "Siembra directa en maceta profunda (mínimo 20 cm). Resiste bien el frío. Cosecha hojas exteriores cuando tengan buen tamaño. Crece rápido y se adapta bien a espacios pequeños si se mantiene húmeda y ventilada.",
+     
      [
        "Temporada: Otoño a primavera.",
        "Tiempo hasta recolección: 1-2 meses.",
-       "Suelo/Maceta: Suelo bien drenado.",
-       "Regado: Riego moderado.",
+       "Suelo/Maceta: Suelo bien drenado o maceta profunda min 20cm",
+       "Regado: Riego moderado, resiste el frío.",
        "Consejos adicionales: Ideal para cultivo en climas frescos.",
      ]
    ),
@@ -579,16 +582,16 @@ export class Plant {
      "Lechuga",
      "Clásica verdura de hoja fácil de cultivar incluso en jardineras.",
      ["Comestible", "Maceta", "Balcon"],
-     "https://cdn.pixabay.com/photo/2016/06/18/17/42/lettuce-1460606_960_720.jpg",
+     "https://images.pexels.com/photos/28524414/pexels-photo-28524414/free-photo-of-cabeza-de-lechuga-pe-de-alface.jpeg",
      "Riego frecuente pero sin encharcar. Evitar sequías.",
      "Sol suave o semisombra.",
      "En ensaladas o como base para wraps y bocadillos.",
      "Rica en agua y fibra, ligera y digestiva.",
-     "Ideal en jardineras de 20 cm de profundidad. Siembra directa o trasplante. Puedes recolectar hojas exteriores poco a poco o cortar la planta entera. Mantén el sustrato húmedo y evita el calor excesivo que causa floración prematura.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 1-2 meses.",
-       "Suelo/Maceta: Suelo bien drenado.",
+       "Suelo/Maceta: Suelo bien drenado o jardinera mínimo 20cm profundidad.",
        "Regado: Riego frecuente.",
        "Consejos adicionales: Evitar exposición prolongada al sol directo.",
      ]
@@ -597,17 +600,17 @@ export class Plant {
      36,
      "Rábano",
      "Raíz pequeña, de cultivo rápido y perfecta para principiantes.",
-     ["Comestible", "Maceta", "Balcon"],
-     "https://cdn.pixabay.com/photo/2016/05/04/20/08/radish-1374782_960_720.jpg",
+     ["Comestible", "Maceta", "Balcon", "Facil"],
+     "https://images.pexels.com/photos/775207/pexels-photo-775207.jpeg",
      "Riego constante, suelo húmedo pero no encharcado.",
      "Sol directo o semisombra.",
      "Crudo en ensaladas, encurtido o como snack.",
      "Bajo en calorías, rico en vitamina C y potasio.",
-     "Se adapta bien a macetas de al menos 15 cm de profundidad. Siembra directa cada pocas semanas para cosecha continua. Germina en 3-7 días y se cosecha en 25-40 días.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 25-40 días.",
-       "Suelo/Maceta: Suelo bien drenado, ligero.",
+       "Suelo/Maceta: Suelo bien drenado, ligero o maceta mínimo 15cm profundidad.",
        "Regado: Riego constante.",
        "Consejos adicionales: Mantener el suelo húmedo, pero evitar el encharcamiento. Ideal para siembra sucesiva.",
      ]
@@ -618,16 +621,16 @@ export class Plant {
      "Tomate cherry",
      "Variedad compacta de tomate ideal para balcones, muy productiva en maceta.",
      ["Comestible", "Maceta", "Balcón", "Facil"],
-     "https://cdn.pixabay.com/photo/2018/06/03/16/51/tomato-3456854_960_720.jpg",
+     "https://bs.plantnet.org/image/o/dec8d16e601a42861f22a32764f7aee065db127e",
      "Riego abundante y regular. No mojar hojas.",
      "Sol directo mínimo 6h/día.",
      "Crudos en ensaladas, brochetas o salsas frescas.",
      "Fuente de licopeno, antioxidante beneficioso para el corazón.",
-     "Maceta profunda (30 cm mínimo). Usa tutor o jaula para sostenerlo. Polinización manual en balcones ayuda a la producción. Requiere abono cada 15 días y buena exposición solar.",
+    
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 60-85 días.",
-       "Suelo/Maceta: Suelo bien drenado y fértil.",
+       "Suelo/Maceta: Suelo bien drenado y fértil o maceta profunda 30cm mínimo.",
        "Regado: Riego regular, evitando mojar las hojas.",
        "Consejos adicionales: Usa un tutor para que las plantas crezcan rectas. Asegura que la planta reciba al menos 6 horas de sol al día.",
      ]
@@ -638,16 +641,16 @@ export class Plant {
      "Pimiento italiano",
      "Planta compacta y productiva. Muy usada en cocina mediterránea.",
      ["Comestible", "Maceta", "Balcón", "Facil"],
-     "https://cdn.pixabay.com/photo/2014/04/10/11/06/chili-320278_960_720.jpg",
+     "https://live.staticflickr.com/7277/8075064178_6e0fef4e20_b.jpg",
      "Riego regular, sin encharcar. Más riego en floración.",
      "Sol directo.",
      "A la plancha, en guisos, rellenos o crudos.",
      "Rico en vitamina C y antioxidantes.",
-     "Maceta profunda y amplia. Necesita calor y sol. Usa tutor. Retira las primeras flores para estimular producción. Asegura buen drenaje y riega solo cuando la tierra esté seca en superficie.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 70-90 días.",
-       "Suelo/Maceta: Suelo bien drenado, fértil.",
+       "Suelo/Maceta: Suelo bien drenado, fértil o maceta produnda y amplia.",
        "Regado: Evitar el encharcamiento. Aumentar el riego durante la floración.",
        "Consejos adicionales: El pimiento necesita mucho calor y sol para crecer correctamente. Usa un tutor si es necesario y retira las primeras flores para fomentar más frutos.",
      ]
@@ -658,16 +661,16 @@ export class Plant {
      "Perejil",
      "Aromática resistente, ideal para jardineras y pequeños espacios.",
      ["Comestible", "Aromática", "Balcón", "Facil"],
-     "https://cdn.pixabay.com/photo/2014/04/10/11/06/parsley-320278_960_720.jpg",
+     "https://images.pexels.com/photos/10048317/pexels-photo-10048317.jpeg",
      "Riego frecuente y uniforme.",
      "Semisombra o sol parcial.",
      "Como condimento en casi cualquier plato.",
      "Fuente de hierro y vitamina C.",
-     "Maceta de al menos 20 cm de profundidad. Siembra directa o trasplante. Cosecha hojas exteriores cuando estén bien formadas. Crece lentamente al principio pero se mantiene varios meses si se cuida.",
+     
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 60-90 días.",
-       "Suelo/Maceta: Suelo ligeramente ácido y bien drenado.",
+       "Suelo/Maceta: Suelo ligeramente ácido y bien drenado o maceta de 20cm.",
        "Regado: Riego frecuente, evitando el encharcamiento.",
        "Consejos adicionales: El perejil puede crecer lentamente al principio. Siembra continua para asegurar una cosecha constante.",
      ]
@@ -678,16 +681,16 @@ export class Plant {
      "Pimiento de Padrón",
      "Variedad gallega de pequeño tamaño, famosa por su sabor suave o picante sorpresa.",
      ["Comestible", "Balcón", "Facil"],
-     "https://cdn.pixabay.com/photo/2015/07/02/10/07/pimientos-828888_960_720.jpg",
+     "https://live.staticflickr.com/8468/28833211806_d9521403f9_b.jpg",
      "Riego moderado. Más frecuente en floración y fruto.",
      "Sol directo mínimo 6h/día.",
      "Fritos en sartén con sal gruesa. También en tortillas o acompañamientos.",
      "Fuente de antioxidantes y vitaminas A y C. Ayuda a la digestión.",
-     "Maceta de al menos 30 cm de profundidad. Prefiere climas cálidos. Necesita tutor si crece mucho. Cosechar verdes y pequeños (5-8 cm). Usar abono orgánico o compost cada 2 semanas. Importante buen drenaje y exposición solar constante.",
+     
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 60-75 días.",
-       "Suelo/Maceta: Suelo bien drenado y rico en nutrientes.",
+       "Suelo/Maceta: Suelo bien drenado y rico en nutrientes o maceta 20cm.",
        "Regado: Moderado, más frecuente durante la floración y cuando el fruto aparece.",
        "Consejos adicionales: El pimiento de Padrón se desarrolla bien en climas cálidos. Recuerda cosechar los frutos pequeños para mantener la planta productiva.",
      ]

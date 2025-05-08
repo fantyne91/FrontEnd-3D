@@ -16,7 +16,10 @@
 
                         <h2> {{ planta.nombre }} </h2>            
                         <h3>{{ planta.beneficios }}</h3>
-            
+                   
+                        <div class="lvl-plant" v-if="planta.categoria.includes('Facil')&&!recomendada"> 
+                            <p>Fácil</p>
+                        </div>
                         
                     </div>
                     
@@ -31,10 +34,13 @@
 
     const toPlant = (planta) => { 
         router.push({ name: 'Planta', params: { nombre: planta.nombre } });
-    }
+}
+    
 
+    
     defineProps({
-        planta: Object
+        planta: Object,
+        recomendada: Boolean
     })
 </script>
     
@@ -63,7 +69,7 @@
         padding: 24px 24px;
         gap: 24px;
         z-index: 2;
-        
+        position: relative;
         cursor: pointer;
         overflow: hidden;
     }
@@ -89,4 +95,14 @@
         opacity: 0;
        transition: opacity 0.5s ease;
     } 
+    .lvl-plant{
+        background-color: rgb(173, 238, 173);
+        padding: 4px 16px;
+        border-radius: 0 0 0 16px;
+        justify-self: end;
+        box-shadow: 0 0 8px grey;
+        position: absolute;
+        top:0;
+        right: 0;
+    }
 </style>
