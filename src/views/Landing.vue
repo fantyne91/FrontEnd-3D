@@ -212,13 +212,13 @@ onBeforeUnmount(() => {
   left:0;
   z-index:-1;
   width: 100%;
-  border-bottom: 16px solid #1b460d;
+  border-bottom: 16px solid #1e4f0e;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Asegúrate de que no haya scroll */
 }
 .intro-landing{
-   height: 100%;
+   height: 100vh;
    text-shadow: 0 0px 6px  white;
    font-weight: bold;
    
@@ -227,31 +227,28 @@ onBeforeUnmount(() => {
    align-content: center;  
 }
 .intro-text{
-
-   max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+   max-width: 650px;
    color: #2a6a15;  
-   justify-items: center;   
+   align-items: center;   
 }
-.btn-primary{
-  background-color: #2a6a15;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-}
+
 h2{ 
-  font-size: 1.2em;  
+  font-size: 1.4em;  
   margin-top: 20px;
 }
 /* seccion recomendadas */
 h3{
-  font-size: 1.8em;  
-  color: #1b460d; 
+  font-size: 2em;  
+ 
 }
 .recomendadas{
   justify-items: start; 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
  
 }
 

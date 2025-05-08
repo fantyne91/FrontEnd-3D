@@ -23,7 +23,12 @@ a {
 a:hover {
   color: #74dd50;
 }
-
+#app {
+ 
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
 body {
   margin: 0;
   display: flex;
@@ -32,25 +37,28 @@ body {
   min-height: 100vh;
 }
 section{
-  padding: 0 clamp(16px, 9vw , 120px);
+  padding: 0 clamp(16px, 8vw , 120px);
+}
+h1,h2,h3,h4,h5,h6 {
+  
+  margin: 0;
 }
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin: 0;
+}
+/* Buttons */
+.btn-primary{
+  background-color: #2a6a15;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 8px;
+  width: fit-content ;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
 button:hover {
   border-color: #646cff;
 }
@@ -59,16 +67,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
-}
 
-#app {
- 
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-}
+/* Cards  */
 .card-container{
   display: flex;
   flex-direction: row;
@@ -77,6 +77,16 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 1em;
   padding: 24px 0px;
+  color: #215310; 
+}
+
+.card {
+  padding: 2em;
+}
+/* Img */
+.planta-image{
+  max-width: 600px;
+  border-radius: 32px;
 }
 @media (prefers-color-scheme: light) {
   :root {
