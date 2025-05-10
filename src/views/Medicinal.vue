@@ -1,19 +1,8 @@
 <template>
-    <section class="section-column">
-        <h1>Plantas medicinales</h1>
-        <div class="card-container">
-            <Card v-for = "(planta , index) in plantaMedicinal" :key="index" :planta="planta"   />
-        </div>
-    </section>
+   <viewsFunction titulo="medicinales" categoria="Medicinal"></viewsFunction>
 </template>
 
 <script setup>
-import { plantas, Plant } from '@/data.js';
-import Card from '@/components/Card.vue';
+    import viewsFunction from '../components/viewsFunction.vue';
 
-const plantaMedicinal= Plant.filterCategoria(plantas, 'Medicinal');
 </script>
-
-<style  scoped>
-
-</style>

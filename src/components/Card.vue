@@ -17,12 +17,11 @@
                         <h2> {{ planta.nombre }} </h2>            
                         <h3>{{ planta.beneficios }}</h3>
                    
-                        <div class="lvl-plant" v-if="planta.categoria.includes('Facil')&&!recomendada"> 
+                        <div class="lvl-plant" v-if="planta.categoria.includes('Facil')&& !recomendada"> 
                             <p>Fácil</p>
                         </div>
                         
-                    </div>
-                    
+                    </div>                    
     </div>
    
 </template>

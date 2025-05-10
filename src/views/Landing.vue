@@ -214,11 +214,12 @@ onBeforeUnmount(() => {
   width: 100%;
   border-bottom: 16px solid #1e4f0e;
   margin: 0;
-  padding: 0;
-  overflow: hidden; /* Asegúrate de que no haya scroll */
+  
+  padding: 0px;
+  overflow: hidden; 
 }
 .intro-landing{
-   height: 100vh;
+   height: 100%;
    text-shadow: 0 0px 6px  white;
    font-weight: bold;
    
@@ -232,7 +233,8 @@ onBeforeUnmount(() => {
     gap:24px;
    max-width: 650px;
    color: #2a6a15;  
-   align-items: center;   
+   align-items: center; 
+   height: 100%;  
 }
 
 h2{ 
