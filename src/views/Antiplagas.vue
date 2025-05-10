@@ -1,9 +1,9 @@
 <template>
-   <viewsFunction titulo="antiplagas" categoria="Antiplagas"></viewsFunction>
+   <ViewsFunction titulo="antiplagas" categoria="Antiplagas"></ViewsFunction>
 </template>
 
 <script setup>
-    import ViewsFunction from '@/components/viewsFunction.vue';
+    import ViewsFunction from '@/components/ViewsFunction.vue';
     
 </script>
 

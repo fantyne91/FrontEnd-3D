@@ -4,6 +4,6 @@
 </template>
 
 <script setup>
-    import ViewsFunction from '@/components/viewsFunction.vue';
+    import ViewsFunction from '@/components/ViewsFunction.vue';
 </script>
 

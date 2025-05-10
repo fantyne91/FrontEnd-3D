@@ -1,8 +1,8 @@
 <template>
-   <viewsFunction titulo="medicinales" categoria="Medicinal"></viewsFunction>
+   <ViewsFunction titulo="medicinales" categoria="Medicinal"></ViewsFunction>
 </template>
 
 <script setup>
-    import viewsFunction from '../components/viewsFunction.vue';
+    import ViewsFunction from '@/components/ViewsFunction.vue';
 
 </script>
