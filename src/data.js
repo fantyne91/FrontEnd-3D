@@ -24,15 +24,24 @@ export class Plant {
     this.comoPlantar = comoPlantar;
   }
 
-  static getRecomendations(plantas) {
-    return plantas.filter((plant) => plant.categoria.includes("Facil"));
-  }
+  // static getRecomendations(plantas) {
+  //   return plantas.filter((plant) => plant.categoria.includes("Facil"));
+  // }
 
-  static getHuerto(plantas) {
-    return plantas.filter((plant) => plant.categoria.includes("Comestible"));
-  }
-  static getMedicinal(plantas) {
-    return plantas.filter((plant) => plant.categoria.includes("Medicinal"));
+  // static getHuerto(plantas) {
+  //   return plantas.filter((plant) => plant.categoria.includes("Comestible"));
+  // }
+  // static getMedicinal(plantas) {
+  //   return plantas.filter((plant) => plant.categoria.includes("Medicinal"));
+  // }
+  // static getAntiplagas(plantas) {
+  //   return plantas.filter((plant) => plant.categoria.includes("Antiplagas"));
+  // }
+
+  static filterCategoria(plantas, search) {
+    return plantas.filter((plant) =>
+      plant.categoria.includes(search)
+    );
   }
 }
  export const plantas = [
@@ -58,7 +67,7 @@ export class Plant {
      2,
      "Menta",
      "Planta aromática con propiedades digestivas y refrescantes, ideal para infusiones y repelente natural.",
-     ["Comestible", "Antimosquitos", "Medicinal"],
+     ["Comestible", "Antiplagas", "Medicinal"],
      "https://live.staticflickr.com/3336/3425984237_5def8118cb_b.jpg",
      "Riego frecuente, especialmente en épocas calurosas. Evitar que el sustrato se seque.",
      "Sombra parcial o luz indirecta.",
@@ -76,7 +85,7 @@ export class Plant {
      3,
      "Albahaca",
      "Hierba aromática esencial en la cocina mediterránea, también actúa como repelente natural.",
-     ["Comestible", "Antimosquitos"],
+     ["Comestible", "Antiplagas"],
      "https://images.pexels.com/photos/7452769/pexels-photo-7452769.jpeg",
      "Riego regular, evitando encharcamientos.",
      "Sol directo o semisombra.",
@@ -93,8 +102,8 @@ export class Plant {
    new Plant(
      4,
      "Romero",
-     "Aromática muy resistente que mejora la memoria, la circulación y es excelente en guisos.",
-     ["Comestible", "Medicinal", "Facil"],
+     "Aromática muy resistente que mejora la memoria, la circulación. Repele mosquitos y polillas",
+     ["Comestible", "Medicinal", "Facil", "Antiplagas"],
      "https://live.staticflickr.com/2250/2457111340_f176fbdf28_b.jpg",
      "Riego escaso. Tolera la sequía.",
      "Sol directo.",
@@ -112,7 +121,7 @@ export class Plant {
      5,
      "Lavanda",
      "Flor aromática usada en relajación, infusiones, y como repelente natural.",
-     ["Medicinal", "Antimosquitos", "Facil"],
+     ["Medicinal", "Antiplagas", "Facil"],
      "https://live.staticflickr.com/284/31546637321_8477e00641_b.jpg",
      "Riego moderado. Dejar secar el suelo entre riegos.",
      "Sol directo.",
@@ -237,14 +246,14 @@ export class Plant {
    new Plant(
      12,
      "Ajo",
-     "Bulbo con fuerte aroma y potentes beneficios antibacterianos y cardiovasculares.",
-     ["Comestible", "Medicinal"],
+     "Bulbo con potentes beneficios antibacterianos y cardiovasculares. Muy efectivo contra ácaros y pulgones",
+     ["Comestible", "Medicinal", "Antiplagas"],
      "https://images.pexels.com/photos/15820106/pexels-photo-15820106/free-photo-of-vegetales-verduras-fresco-puerro.jpeg",
      "Riego moderado hasta que el tallo empiece a secar.",
      "Sol directo.",
-     "Cocinado en casi cualquier receta o crudo con aceite.",
+     "Cocinado en casi cualquier receta o crudo con aceite. Pulverizar extracto o infusión sobre cultivos",
      "Antibiótico natural, reduce colesterol, fortalece sistema inmune.",
-     
+
      [
        "Temporada: Planta en otoño a cosecha en primavera.",
        "Tiempo hasta recolección: 6 meses.",
@@ -263,7 +272,7 @@ export class Plant {
      "Luz solar directa o parcial.",
      "En tortilla, crema agria, pan o sopas.",
      "Fuente de vitamina A y C, digestivo.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -276,13 +285,13 @@ export class Plant {
      14,
      "Citronela",
      "Hierba tropical con fuerte aroma a limón, ideal como antimosquitos natural.",
-     ["Antimosquitos", "Medicinal"],
+     ["Antiplagas", "Medicinal"],
      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Citronella_mucronata_%28R._et_P.%29_D._Don_%28pabloendemico%29.jpg/500px-Citronella_mucronata_%28R._et_P.%29_D._Don_%28pabloendemico%29.jpg",
      "Riego abundante pero espaciado. Sustrato húmedo.",
      "Sol directo o semisombra.",
      "En infusiones o macerada como repelente.",
      "Ahuyenta mosquitos eficazmente, reduce ansiedad.",
-  
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 2-3 meses.",
@@ -301,7 +310,7 @@ export class Plant {
      "Sol directo.",
      "En infusiones, guisos y platos de carne.",
      "Reduce inflamaciones, regula la menstruación, antioxidante, beneficiosa para piel y cabello",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 meses.",
@@ -320,7 +329,7 @@ export class Plant {
      "Sombra parcial o luz indirecta.",
      "En infusiones para calmar ansiedad o problemas de sueño.",
      "Relajante natural, alivia estrés y trastornos digestivos.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -339,7 +348,7 @@ export class Plant {
      "Sombra parcial.",
      "Cocinada como espinacas, en sopas o infusiones.",
      "Depurativa, rica en hierro, buena para el cabello y la piel.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -358,7 +367,7 @@ export class Plant {
      "Sol directo.",
      "Infusión calmante para estrés y dolores estomacales.",
      "Antiinflamatoria, calmante, alivia cólicos.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -377,7 +386,7 @@ export class Plant {
      "Semisombra.",
      "En cápsulas o infusión de la raíz seca.",
      "Sedante natural, combate insomnio y ansiedad.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -396,7 +405,7 @@ export class Plant {
      "Sol directo.",
      "En pescados, encurtidos y salsas.",
      "Digestivo, alivia flatulencias y cólicos.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -416,7 +425,7 @@ export class Plant {
      "Sol directo.",
      "Infusión para regular el ciclo menstrual.",
      "Antiinflamatoria, cicatrizante, reguladora hormonal.",
-    
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -435,7 +444,7 @@ export class Plant {
      "Sol directo.",
      "Infusión expectorante o como tónico.",
      "Expectorante, antiséptico y digestivo.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 1 año.",
@@ -454,7 +463,7 @@ export class Plant {
      "Sol directo.",
      "Tallos y semillas en guisos, ensaladas e infusiones.",
      "Digestivo, calma gases y estimula el apetito.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2 años.",
@@ -473,7 +482,7 @@ export class Plant {
      "Sol directo.",
      "Infusión calmante o en cremas caseras.",
      "Cicatrizante, útil para piel inflamada o acné.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 años.",
@@ -492,7 +501,7 @@ export class Plant {
      "Sol directo. Necesita calor.",
      "Asado, crudo en ensaladas, relleno o en sofritos.",
      "Fuente de vitamina C y antioxidantes.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 70-90 días.",
@@ -511,7 +520,7 @@ export class Plant {
      "Sol directo. Le gusta el clima templado.",
      "Cruda en ensaladas, caramelizada, en guisos, caldos y sofritos.",
      "Rica en quercetina y compuestos antioxidantes.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 3-4 meses.",
@@ -530,7 +539,7 @@ export class Plant {
      "Sol directo o semisombra.",
      "En crudo, cocida, en purés o postres.",
      "Rica en betacarotenos, mejora la visión y el sistema inmune.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 2-3 meses.",
@@ -549,7 +558,7 @@ export class Plant {
      "Semisombra o sol suave.",
      "En ensaladas, pizzas, bocadillos o pesto.",
      "Rica en vitamina K, C y compuestos antiinflamatorios.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 4-6 semanas.",
@@ -568,7 +577,7 @@ export class Plant {
      "Semisombra o sol parcial.",
      "Salteada, en ensaladas o batidos verdes.",
      "Alto contenido en hierro, ácido fólico y antioxidantes.",
-     
+
      [
        "Temporada: Otoño a primavera.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -587,7 +596,7 @@ export class Plant {
      "Sol suave o semisombra.",
      "En ensaladas o como base para wraps y bocadillos.",
      "Rica en agua y fibra, ligera y digestiva.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 1-2 meses.",
@@ -606,7 +615,7 @@ export class Plant {
      "Sol directo o semisombra.",
      "Crudo en ensaladas, encurtido o como snack.",
      "Bajo en calorías, rico en vitamina C y potasio.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 25-40 días.",
@@ -626,7 +635,7 @@ export class Plant {
      "Sol directo mínimo 6h/día.",
      "Crudos en ensaladas, brochetas o salsas frescas.",
      "Fuente de licopeno, antioxidante beneficioso para el corazón.",
-    
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 60-85 días.",
@@ -646,7 +655,7 @@ export class Plant {
      "Sol directo.",
      "A la plancha, en guisos, rellenos o crudos.",
      "Rico en vitamina C y antioxidantes.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 70-90 días.",
@@ -666,7 +675,7 @@ export class Plant {
      "Semisombra o sol parcial.",
      "Como condimento en casi cualquier plato.",
      "Fuente de hierro y vitamina C.",
-     
+
      [
        "Temporada: Primavera a otoño.",
        "Tiempo hasta recolección: 60-90 días.",
@@ -686,7 +695,7 @@ export class Plant {
      "Sol directo mínimo 6h/día.",
      "Fritos en sartén con sal gruesa. También en tortillas o acompañamientos.",
      "Fuente de antioxidantes y vitaminas A y C. Ayuda a la digestión.",
-     
+
      [
        "Temporada: Primavera a verano.",
        "Tiempo hasta recolección: 60-75 días.",

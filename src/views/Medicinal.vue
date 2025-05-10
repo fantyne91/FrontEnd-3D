@@ -11,7 +11,7 @@
 import { plantas, Plant } from '@/data.js';
 import Card from '@/components/Card.vue';
 
-const plantaMedicinal= Plant.getMedicinal(plantas);
+const plantaMedicinal= Plant.filterCategoria(plantas, 'Medicinal');
 </script>
 
 <style  scoped>

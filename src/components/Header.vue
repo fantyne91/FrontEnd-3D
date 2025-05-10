@@ -8,9 +8,9 @@
         </div>
         <div class="links">
             <router-link to="/"> Inicio</router-link>
-            <router-link to="/huerto"> Plantas para huerto</router-link>
-            <router-link to="/medicinal"> Plantas medicinales</router-link>
-            <router-link to="/antiplagas"> Plantas antiplagas</router-link>
+            <router-link to="/Huerto"> Plantas para huerto</router-link>
+            <router-link to="/Medicinal"> Plantas medicinales</router-link>
+            <router-link to="/Antiplagas"> Plantas antiplagas</router-link>
         </div>
         <div @click="toggle" class="mobileMenu">
             <svg class="menu" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
@@ -50,6 +50,7 @@ const toggle = () => {
         align-items: start;
         width: 100%;       
         padding: 16px 48px;
+        
     }
     nav *{       
         color: #204722;
@@ -63,6 +64,7 @@ const toggle = () => {
         justify-items: start;
         text-align: left;
         display:none;
+          z-index:3;
     }
     .links {
        flex-direction: row;
@@ -72,6 +74,7 @@ const toggle = () => {
     }
     .mobileMenu{
         display: none;
+          z-index:3;
     }
    @media (max-width: 768px) {
         .logo {
@@ -82,17 +85,22 @@ const toggle = () => {
         }
         .mobileMenu{
             display: block;
+          
         }
         .links {
            display:none;
-         position:absolute;
-            top:10px;
+            position: absolute;
+            top:0px;
+            left:0;
+               width: 100%;
+               padding: 16px 0;
         }
         .links.show{
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
+            background-color: white;
              
         }
     }

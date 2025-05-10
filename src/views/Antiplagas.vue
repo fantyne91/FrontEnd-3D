@@ -11,7 +11,7 @@
 <script setup>
     import { plantas, Plant } from '@/data.js';
     import Card from '@/components/Card.vue';
-    const plantasAntiplagas = Plant.getAntiplagas(plantas);
+    const plantasAntiplagas = Plant.filterCategoria(plantas, 'Antiplagas');
     
 </script>
 

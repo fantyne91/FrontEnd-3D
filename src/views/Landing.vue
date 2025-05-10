@@ -4,7 +4,7 @@
 import {plantas, Plant} from '@/data.js';
 import Card from '@/components/Card.vue';
 
-const plantaRecomendada = Plant.getRecomendations(plantas)
+const plantaRecomendada = Plant.filterCategoria(plantas, "Facil")
    
 
 
@@ -236,8 +236,7 @@ onBeforeUnmount(() => {
 }
 
 h2{ 
-  font-size: 1.4em;  
-  margin-top: 20px;
+  font-size: 1.4em;   
   
 }
 /* seccion recomendadas */
