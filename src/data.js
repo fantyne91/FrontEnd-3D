@@ -309,7 +309,7 @@ export class Plant {
      "Riego moderado. Dejar secar entre riegos.",
      "Sol directo.",
      "En infusiones, guisos y platos de carne.",
-     "Reduce inflamaciones, regula la menstruación, antioxidante, beneficiosa para piel y cabello",
+     "Reduce inflamaciones, regula la menstruación, antioxidante.",
 
      [
        "Temporada: Primavera a otoño.",
