@@ -229,7 +229,7 @@ onBeforeUnmount(() => {
  
  
    font-weight: bold;
-min-height: 600px;
+min-height: 650px;
    justify-items: end;
    max-height: 100vh;
    align-content: center;  
