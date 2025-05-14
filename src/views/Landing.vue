@@ -264,7 +264,6 @@ h3{
 @media  (max-width: 700px){
   
 .intro-landing{
-
   align-content: start;
 }
   
