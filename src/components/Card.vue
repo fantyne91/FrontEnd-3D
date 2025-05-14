@@ -45,7 +45,7 @@
     
 <style  scoped>
     h2{ 
-        font-size: 2.4rem;
+        font-size: 2.3rem;
         color: #2a6a15;
     }
     h3{
@@ -103,5 +103,10 @@
         position: absolute;
         top:0;
         right: 0;
+    }
+    @media (max-width:700px){
+        h2{
+            font-size: 1.7rem;
+        }
     }
 </style>

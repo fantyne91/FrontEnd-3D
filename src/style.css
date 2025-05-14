@@ -21,24 +21,20 @@ a {
   text-decoration: inherit;
 }
 
-#app {
- 
+#app { 
   margin: 0 auto;
   width: 100%;
-  text-align: center;
-  
+  text-align: center;  
 }
 body {
   margin: 0;
   display: flex;
  max-width: 100%;
   min-width: 320px;
-  min-height: 100vh;
-  
+  min-height: 100vh;  
 }
 section{
-  padding: 32px clamp(16px, 8vw , 120px);
- 
+  padding: 32px clamp(16px, 8vw , 120px); 
 }
 .section-column{
   display: flex;
@@ -62,8 +58,7 @@ button {
   background-color: #2a6a15;
   color: white;
    border:2px solid #2a6a15;
-  padding: 8px 16px;
-  
+  padding: 8px 16px;  
   cursor: pointer;
   border-radius: 10px;
   width: fit-content ;
@@ -71,22 +66,17 @@ button {
 .btn-secondary{
   background-color: white;
   border:2px solid #2a6a15;
-  border-radius: 10px;
- 
+  border-radius: 10px; 
   padding: 8px 16px;
   color: #2a6a15;
 }
 .btn-secondary:hover{
   background-color: #2a6a15;
-  
- 
   color: white;
 }
 .filter{
         max-width: 300px;
     }
-
-
 
 /* Cards  */
 .card-container{
@@ -106,9 +96,7 @@ button {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
+  
   button {
     background-color: #f9f9f9;
   }

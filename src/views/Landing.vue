@@ -185,24 +185,24 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-    <section class="intro-landing">
-      <div class="intro-text">
-            <h1>Descubre el poder de las plantas y sus beneficios</h1>        
-            <h2>Siéntete mejor cultivando comida sana y remedios naturales.</h2>
-            <h3></h3> 
-            <button class="btn-primary">Comienza a plantar</button> 
-        </div>
-        
-        <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
-       <div ref="sceneContainer" class="scene-container"></div>
-    </section>
-    <section class= "recomendadas">
-      <h3>Plantas de fácil cuidado</h3>
-      <div class= "card-container">
-          <Card  v-for="(planta, index) in plantaRecomendada" :key="index" :planta="planta" :recomendada="true" /> 
-      </div>
-    </section>
-    
+  <section class="intro-landing">
+    <div class="intro-text">
+      <h1>Descubre el poder de las plantas y sus beneficios</h1>
+      <h2>Siéntete mejor cultivando comida sana y remedios naturales.</h2>
+      
+      <router-link to="/huerto" class="btn-primary"> Comienza a plantar</router-link>
+    </div>
+
+    <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
+    <div ref="sceneContainer" class="scene-container"></div>
+  </section>
+  <section class="recomendadas">
+    <h3>Plantas de fácil cuidado</h3>
+    <div class="card-container">
+      <Card v-for="(planta, index) in plantaRecomendada" :key="index" :planta="planta" :recomendada="true" />
+    </div>
+  </section>
+
 </template>
 <style scoped >
  /* scene */
@@ -214,15 +214,22 @@ onBeforeUnmount(() => {
   width: 100%;
   border-bottom: 16px solid #1e4f0e;
   margin: 0;
-  
+  height: 100%;
   padding: 0px;
   overflow: hidden; 
+  min-height: 600px;
+}
+.scene-container canvas{
+ height: 100%;
+  
+  display: block;
+ 
 }
 .intro-landing{
-   height: 100%;
-   text-shadow: 0 0px 6px  white;
+ 
+ 
    font-weight: bold;
-   
+min-height: 600px;
    justify-items: end;
    max-height: 100vh;
    align-content: center;  
@@ -230,15 +237,17 @@ onBeforeUnmount(() => {
 .intro-text{
     display: flex;
     flex-direction: column;
-    gap:24px;
+    gap:clamp(0px,4vh,32px);
    max-width: 650px;
    color: #2a6a15;  
    align-items: center; 
-   height: 100%;  
+   height: 100%;
+   justify-content: center;  
 }
-
+h1{text-shadow: 0 0 3px white;}
 h2{ 
-  font-size: 1.4em;   
+  font-size: 1.4em;
+  text-shadow: 0 0 3px white;   
   
 }
 /* seccion recomendadas */
@@ -250,8 +259,14 @@ h3{
   justify-items: start; 
   display: flex;
   flex-direction: column;
-  gap: 24px;
- 
+  gap: 24px; 
 }
+@media  (max-width: 700px){
+  
+.intro-landing{
 
+  align-content: start;
+}
+  
+}
 </style>
