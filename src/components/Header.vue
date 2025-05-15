@@ -95,8 +95,8 @@ const toggle = () => {
             left:0;
                width: 100%;
                padding: 16px 0;
-               border-radius: 0 0 15px 15px;
-               border-bottom:2px solid #2a6a15;
+              
+               border-bottom:4px solid #2a6a15;
                
         }
         .links.show{
@@ -105,7 +105,7 @@ const toggle = () => {
             align-items: center;
             gap: 8px;
             background-color: white;
-            top:60px
+            top:55px
              
         }
     }
