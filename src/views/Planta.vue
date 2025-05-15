@@ -63,4 +63,12 @@ const plantaUrl = plantas.find(p => p.nombre === decodeURIComponent(route.params
   max-width: 450px;
   border-radius: 32px;
 }
+@media (max-width:700px){
+    .planta-container {
+        flex-direction: column;
+    }
+        .planta-image {
+            width: 100%;
+        }
+}
 </style>

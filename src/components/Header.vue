@@ -36,8 +36,9 @@ import { ref } from 'vue';
 const toggle = () => {
     const links = document.querySelector('.links');
   
-        links.classList.toggle('show');
-    
+    links.classList.toggle('show'); 
+    links.addEventListener("click", () => links.classList.remove('show') )      
+
 }
 
 </script>
@@ -94,13 +95,17 @@ const toggle = () => {
             left:0;
                width: 100%;
                padding: 16px 0;
+               border-radius: 0 0 15px 15px;
+               border-bottom:2px solid #2a6a15;
+               
         }
         .links.show{
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
+            gap: 8px;
             background-color: white;
+            top:60px
              
         }
     }

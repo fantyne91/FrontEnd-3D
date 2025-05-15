@@ -108,5 +108,14 @@
         h2{
             font-size: 1.7rem;
         }
+        .card{
+            height: 300px;
+        }
+        .img-container::before {
+            height: 300px;
+        }
+                .img-container{
+                    max-height: 300px;
+                }
     }
 </style>

@@ -226,8 +226,6 @@ onBeforeUnmount(() => {
  
 }
 .intro-landing{
- 
- 
    font-weight: bold;
 min-height: 650px;
    justify-items: end;
