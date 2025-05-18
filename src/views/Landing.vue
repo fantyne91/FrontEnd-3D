@@ -258,7 +258,7 @@ h3{
   display: flex;
   flex-direction: column;
   gap: 24px; 
- 
+ padding-top:48px;
 }
 @media  (max-width: 700px){
   

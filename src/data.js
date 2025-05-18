@@ -122,7 +122,7 @@ export class Plant {
      "Lavanda",
      "Flor aromática usada en relajación, infusiones, y como repelente natural.",
      ["Medicinal", "Antiplagas", "Facil"],
-     "https://live.staticflickr.com/284/31546637321_8477e00641_b.jpg",
+     "https://live.staticflickr.com/3635/3500856396_90face3b8b_c.jpg",
      "Riego moderado. Dejar secar el suelo entre riegos.",
      "Sol directo.",
      "En infusión para dormir o en bolsitas aromáticas.",
