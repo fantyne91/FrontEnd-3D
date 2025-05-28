@@ -189,13 +189,15 @@ onBeforeUnmount(() => {
     <div class="intro-text">
       <h1>Descubre el poder de las plantas y sus beneficios</h1>
       <h2>Siéntete mejor cultivando comida sana y remedios naturales.</h2>
-      
       <router-link to="/huerto" class="btn-primary"> Comienza a plantar</router-link>
     </div>
 
-    <!--<img :src="tomates.img" alt="Tomate" class="plant-image" />-->
-    <div ref="sceneContainer" class="scene-container"></div>
+    <transition name="fade" appear>
+      <div ref="sceneContainer" class="scene-container"></div>
+    </transition>
+
   </section>
+
   <section class="recomendadas">
     <h3>Plantas de fácil cuidado</h3>
     <div class="card-container">
@@ -245,8 +247,19 @@ min-height: 650px;
 h1{text-shadow: 0 0 3px white;}
 h2{ 
   font-size: 1.4em;
-  text-shadow: 0 0 3px white;   
-  
+  text-shadow: 0 0 3px white;     
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
 }
 /* seccion recomendadas */
 h3{

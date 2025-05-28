@@ -63,6 +63,9 @@ button {
   border-radius: 10px;
   width: fit-content ;
 }
+.btn-primary:hover{
+  background-color: #215310;
+}
 .btn-secondary{
   background-color: white;
   border:2px solid #2a6a15;
